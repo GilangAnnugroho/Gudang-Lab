@@ -158,10 +158,10 @@ Sistem ini menggunakan struktur hak akses (*Role*). Gunakan akun bawaan berikut 
 
 | Role / Akses | Email | Password | Fungsionalitas Utama |
 | --- | --- | --- | --- |
-| **Admin System** | `admin@gudanglab.com` | `password` | Kendali Penuh (Data Master, User, dsb). |
-| **Kepala TU** | `kepalatu@gudanglab.com` | `password` | Memberikan *Approval* permintaan barang. |
-| **Admin Gudang** | `gudang@gudanglab.com` | `password` | Input barang masuk, distribusi barang keluar. |
-| **User (Ruangan)** | `ruangan@gudanglab.com` | `password` | Membuat *Request* barang ke gudang. |
+| **Super Admin** | `admin@labkesda.com` | `password` | Kendali Penuh (Data Master, User, dsb). |
+| **Kepala Lab** | `kepala@labkesda.com` | `password` | Memberikan *Approval* permintaan barang. |
+| **Admin Gudang** | `gudang@@labkesda.com` | `password` | Input barang masuk, distribusi barang keluar. |
+| **Petugas Unit** | `namaunit@labkesda.com` | `password` | Membuat *Request* barang ke gudang. |
 
 *(Catatan: Sesuaikan email di atas jika data seeder di dalam kode menggunakan email yang berbeda).*
 
