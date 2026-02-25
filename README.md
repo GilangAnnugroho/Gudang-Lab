@@ -14,8 +14,6 @@
   Dari Pengadaan Barang, Permintaan Ruangan, hingga Stock Opname — <i>Akurat & Terintegrasi.</i>
 </p>
 
-[Fitur Utama](#-fitur-unggulan) • [Teknologi](#-teknologi) • [Instalasi](#-panduan-instalasi-cepat) • [Demo](#-akses-demo)
-
 </div>
 
 ---
