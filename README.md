@@ -1,66 +1,189 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+```markdown
+<div align="center">
+
+# 🏥 GUDANG-LAB
+**Sistem Informasi Manajemen Inventaris & Stok Laboratorium**
+
+![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.3.17-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <b>Digitalisasi Operasional Gudang Laboratorium:</b><br>
+  Dari Pengadaan Barang, Permintaan Ruangan, hingga Stock Opname — <i>Akurat & Terintegrasi.</i>
 </p>
 
-## About Laravel
+[Fitur Utama](#-fitur-unggulan) • [Teknologi](#-teknologi) • [Instalasi](#-panduan-instalasi-cepat) • [Demo](#-akses-demo)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📖 Tentang Aplikasi
 
-## Learning Laravel
+**GUDANG-LAB** adalah sistem informasi berbasis web yang dirancang khusus untuk digitalisasi inventaris barang di Unit Pelaksana Teknis Daerah (UPTD) Laboratorium Kesehatan. Sistem ini menggantikan pencatatan buku besar manual menjadi terkomputerisasi, sehingga memudahkan pelacakan reagen kimia, alat kesehatan (alkes), dan Barang Habis Pakai (BHP), serta memastikan transparansi alur distribusi barang antar ruangan.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🌟 Fitur Unggulan
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Modul | Deskripsi & Fungsionalitas |
+| :--- | :--- |
+| **📦 Master Data** | • **Katalog Barang:** Kelola kategori, satuan, dan data master barang (`ItemMaster`).<br>• **Varian & Batch:** Lacak *Expired Date* (ED) dan nomor *batch* barang (`ItemVariant`).<br>• **Manajemen Supplier:** Database pemasok barang laboratorium. |
+| **🔄 Sirkulasi Stok** | • **Barang Masuk & Keluar:** Pencatatan distribusi item dari gudang utama ke ruangan (`TransactionController`).<br>• **Stock Current:** Pantau ketersediaan stok secara *real-time*.<br>• **Stock Opname:** Penyesuaian fisik stok di gudang dengan data pada sistem. |
+| **📝 Sistem Permintaan** | • **Request Ruangan:** User (ruangan) dapat mengajukan permintaan barang (`RequestController`).<br>• **Approval Berjenjang:** Validasi permintaan oleh pihak berwenang (`RequestApprovalController`). |
+| **📊 Pelaporan (PDF)** | • **Kartu Stok:** Riwayat pergerakan (masuk/keluar) per item.<br>• **Laporan Komprehensif:** *Generate* PDF laporan barang keluar, distribusi, persetujuan, dan rekap penggunaan tahunan (`ReportController`). |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠 Teknologi
 
-### Premium Partners
+Project ini dibangun menggunakan fondasi teknologi modern yang stabil dan aman:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+* **Backend Core:** `Laravel 10.x` (PHP 8.3.17)
+* **Database:** `MySQL / MariaDB`
+* **Frontend Asset:** `Vite`, `Blade Engine`
+* **Styling & UI:** HTML5, CSS3, JavaScript
+* **Auth & Security:** Autentikasi dan *Role-Based Policies* (`ItemMasterPolicy`, `RequestPolicy`, dll).
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Panduan Instalasi Cepat
 
-## Code of Conduct
+Ikuti langkah-langkah berikut untuk menjalankan project di *local environment* Anda:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Persiapan Awal
+Pastikan komputer Anda sudah terinstall: `PHP >= 8.3`, `Composer`, dan `Node.js`.
 
-## Security Vulnerabilities
+### 2. Clone & Install Dependencies
+Salin repository dan install library yang dibutuhkan:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Clone repository
+git clone [https://github.com/GilangAnnugroho/Gudang-Lab.git](https://github.com/GilangAnnugroho/Gudang-Lab.git)
 
-## License
+# Masuk ke direktori project
+cd Gudang-Lab
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Install Backend Dependencies
+composer install
+
+# Install Frontend Dependencies
+npm install
+
+```
+
+### 3. Konfigurasi Environment
+
+Duplikat file konfigurasi dan generate kunci aplikasi:
+
+```bash
+# Duplikat file env
+cp .env.example .env
+
+# Generate App Key
+php artisan key:generate
+
+```
+
+### 4. Setup Database
+
+Buat database kosong di phpMyAdmin (misal: `gudang_lab_db`). Buka file `.env` di text editor Anda, lalu sesuaikan bagian konfigurasi database:
+
+```ini
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gudang_lab_db 
+DB_USERNAME=root
+DB_PASSWORD=
+
+```
+
+### 5. Migrasi & Menjalankan Server
+
+Jalankan perintah berikut untuk membuat tabel, memasukkan data *seeder* awal, dan memulai aplikasi:
+
+```bash
+# Migrasi tabel & Seeder (Untuk Data Master dan Akun)
+php artisan migrate:fresh --seed
+
+# Jalankan server Laravel (Terminal 1)
+php artisan serve
+
+# Compile aset frontend (Terminal 2)
+npm run dev
+
+```
+
+🚀 **Aplikasi siap diakses di:** `http://127.0.0.1:8000`
+
+---
+
+## 📂 Struktur Direktori Utama
+
+Berikut adalah peta struktur modul untuk memudahkan navigasi kode sistem Gudang-Lab:
+
+```text
+Gudang-Lab/
+├── app/
+│   ├── Console/Commands/         # 💻 Custom Commands (ex: ImportItemsCsv)
+│   ├── Http/
+│   │   ├── Controllers/          # 🧠 Logika Bisnis Utama (ItemMaster, Request, StockOpname, dll)
+│   │   └── Requests/             # 🛡️ Validasi Form (StoreCategoryRequest, dll)
+│   ├── Models/                   # 📦 Representasi Tabel Database (ItemVariant, Transaction, dll)
+│   └── Policies/                 # 🔐 Aturan Hak Akses (RequestPolicy, TransactionPolicy)
+├── database/
+│   ├── migrations/               # ⚙️ Skema Tabel Database
+│   └── seeders/                  # 🌱 Data Awal (StockCurrentSeeder, TransactionSeeder)
+├── resources/
+│   └── views/
+│       ├── auth/                 # 🔑 Tampilan Login
+│       ├── dashboard/            # 📊 Tampilan Utama Admin
+│       ├── items/ & variants/    # 📝 Manajemen Master Data Barang
+│       ├── layouts/              # 🎨 Template Utama (Sidebar, Topbar, Flash)
+│       ├── reports/              # 🖨️ Template Laporan & PDF (Stock, Usage Yearly, dll)
+│       ├── requests/             # 📝 Form Pengajuan Permintaan
+│       ├── stock_opnames/        # 🔍 Fitur Penyesuaian Stok Gudang
+│       └── transactions/         # 🔄 Fitur Barang Masuk & Keluar
+└── routes/
+    └── web.php                   # 🔗 Definisi URL & Routing
+
+```
+
+---
+
+## 👤 Akses Demo (Seeder)
+
+Sistem ini menggunakan struktur hak akses (*Role*). Gunakan akun bawaan berikut (hasil *seeder*) untuk pengujian sistem:
+
+| Role / Akses | Email | Password | Fungsionalitas Utama |
+| --- | --- | --- | --- |
+| **Admin System** | `admin@gudanglab.com` | `password` | Kendali Penuh (Data Master, User, dsb). |
+| **Kepala TU** | `kepalatu@gudanglab.com` | `password` | Memberikan *Approval* permintaan barang. |
+| **Admin Gudang** | `gudang@gudanglab.com` | `password` | Input barang masuk, distribusi barang keluar. |
+| **User (Ruangan)** | `ruangan@gudanglab.com` | `password` | Membuat *Request* barang ke gudang. |
+
+*(Catatan: Sesuaikan email di atas jika data seeder di dalam kode menggunakan email yang berbeda).*
+
+---
+
+## 🤝 Kontribusi
+
+Sistem ini dikembangkan sebagai bagian dari tugas Praktik Kerja Lapangan (PKL) di UPTD Laboratorium Kesehatan. Jika ingin berkontribusi:
+
+1. **Fork** repository ini.
+2. Buat branch fitur baru: `git checkout -b fitur-baru`.
+3. Commit perubahan: `git commit -m 'Menambahkan fitur XYZ'`.
+4. Push ke branch: `git push origin fitur-baru`.
+5. Submit **Pull Request**.
+
+---
+
+<div align="center">
+
+**GUDANG-LAB** © 2026 • Dikembangkan oleh **[Gilang Annugroho](https://www.google.com/search?q=https://github.com/GilangAnnugroho)**.
+
+</div>
