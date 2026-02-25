@@ -29,7 +29,7 @@
 | Modul | Deskripsi & Fungsionalitas |
 | :--- | :--- |
 | **📦 Master Data** | • **Katalog Barang:** Kelola kategori, satuan, dan data master barang (`ItemMaster`).<br>• **Varian & Batch:** Lacak *Expired Date* (ED) dan nomor *batch* barang (`ItemVariant`).<br>• **Manajemen Supplier:** Database pemasok barang laboratorium. |
-| **🔄 Sirkulasi Stok** | • **Barang Masuk & Keluar:** Pencatatan distribusi item dari gudang utama ke ruangan (`TransactionController`).<br>• **Stock Current:** Pantau ketersediaan stok secara *real-time*.<br>• **Stock Opname:** Penyesuaian fisik stok di gudang dengan data pada sistem. |
+| **🔄 Sirkulasi Stok & FEFO** | • **Metode FEFO (First Expired, First Out):** Sistem cerdas yang otomatis memprioritaskan pengeluaran barang dengan masa kedaluwarsa paling dekat untuk mencegah *dead stock* / barang rusak.<br>• **Barang Masuk & Keluar:** Pencatatan distribusi item dari gudang utama ke ruangan (`TransactionController`).<br>• **Stock Current:** Pantau ketersediaan stok secara *real-time*.<br>• **Stock Opname:** Penyesuaian fisik stok di gudang dengan data pada sistem. |
 | **📝 Sistem Permintaan** | • **Request Ruangan:** User (ruangan) dapat mengajukan permintaan barang (`RequestController`).<br>• **Approval Berjenjang:** Validasi permintaan oleh pihak berwenang (`RequestApprovalController`). |
 | **📊 Pelaporan (PDF)** | • **Kartu Stok:** Riwayat pergerakan (masuk/keluar) per item.<br>• **Laporan Komprehensif:** *Generate* PDF laporan barang keluar, distribusi, persetujuan, dan rekap penggunaan tahunan (`ReportController`). |
 
@@ -160,7 +160,7 @@ Sistem ini menggunakan struktur hak akses (*Role*). Gunakan akun bawaan berikut 
 | --- | --- | --- | --- |
 | **Super Admin** | `admin@labkesda.com` | `password` | Kendali Penuh (Data Master, User, dsb). |
 | **Kepala Lab** | `kepala@labkesda.com` | `password` | Memberikan *Approval* permintaan barang. |
-| **Admin Gudang** | `gudang@@labkesda.com` | `password` | Input barang masuk, distribusi barang keluar. |
+| **Admin Gudang** | `gudang@labkesda.com` | `password` | Input barang masuk, distribusi barang keluar. |
 | **Petugas Unit** | `namaunit@labkesda.com` | `password` | Membuat *Request* barang ke gudang. |
 
 *(Catatan: Sesuaikan email di atas jika data seeder di dalam kode menggunakan email yang berbeda).*
